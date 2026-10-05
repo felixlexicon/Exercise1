@@ -10,10 +10,10 @@ void InteractiveConsole()
     while (true)
     {
         Console.WriteLine("Enter new employee name to begin add, 'exit' to quit, or 'list' to view employees:");
-        string name = Console.ReadLine();
-        while (name.Length == 0)
+        string? name = Console.ReadLine();
+        while (string.IsNullOrWhiteSpace(name))
         {
-            Console.WriteLine("Input cannot be empty. Please enter new name, 'exit' or 'list':");
+            Console.WriteLine("Input cannot be empty or null. Please enter new name, 'exit' or 'list':");
             name = Console.ReadLine();
         }
         if (name.ToLower() == "exit")
